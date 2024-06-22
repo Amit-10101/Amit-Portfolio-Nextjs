@@ -11,18 +11,24 @@ const RecentProjects = () => {
 			</h1>
 
 			<div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
-				{projects.map(({ id, title, des, img, iconLists, link }) => (
+				{projects.map(({ id, title, des, img, iconLists, link, livelink }) => (
 					<div
 						key={id}
 						className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[90vw]"
 					>
-						<PinContainer title={'Visit'} href={link}>
+						<PinContainer title={'Source Code'} href={link}>
 							<div className="relative flex items-center justify-center sm:w-[570px] sm:h-[40vh] h-[30vh] w-[80vw] overflow-hidden mb-10">
 								<div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]">
 									<img src="/bg.png" alt="bg-img" />
 								</div>
 
-								<img src={img} alt={title} className="z-10 absolute bottom-0" />
+								<img
+									src={img}
+									alt={title}
+									className="z-10 absolute bottom-0"
+									width="470"
+									height="300"
+								/>
 							</div>
 
 							<h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
@@ -39,7 +45,11 @@ const RecentProjects = () => {
 										<div
 											key={icon}
 											className="border border-white/[0.2] rounded-full lg:w-10 lg:h-10 w-8 h-8 bg-black flex items-center justify-center"
-											style={{ transform: `translateX(-${5 * index * 2}px)` }}
+											style={{
+												transform: `translateX(-${5 * index * 2}px)`,
+												background:
+													'linear-gradient(to left, rgb(7, 15, 30), rgb(27, 35, 50))',
+											}}
 										>
 											<img src={icon} alt={icon} className="p-2" />
 										</div>
@@ -48,7 +58,7 @@ const RecentProjects = () => {
 
 								<a
 									className="flex justify-center items-center"
-									href={link}
+									href={livelink}
 									target={'_blank'}
 									rel={'noopener noreferrer'}
 								>
