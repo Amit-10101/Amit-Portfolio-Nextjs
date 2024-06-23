@@ -10,7 +10,7 @@ const Skills = () => {
 				My <span className="text-purple">skill set</span>
 			</h1>
 
-			<div className="w-full mt-12 grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 sm:gap-6 md:gap-8 lg:gap-14 justify-center items-center">
+			<div className="w-full mt-12 grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 sm:gap-6 md:gap-8 lg:gap-14 justify-items-center items-center">
 				{skillset.map(({ img, title, backgroundColorEffect }) => (
 					<SkillButton
 						key={title}
